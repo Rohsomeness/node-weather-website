@@ -13,9 +13,11 @@ const forecast = (latitude, longitude, callback) => {
             const temp = body.current.temperature
             const chance_rain = body.current.precip * 100
             const feels_like = body.current.feelslike
+            const humidity = body.current.humidity
             output_string = 'It is currently ' + temp + ' degrees out. There '
                 + 'is a ' + chance_rain + '% chance of rain. It feels ' 
-                + 'like ' + feels_like + ' degrees out.'
+                + 'like ' + feels_like + ' degrees out. The current hum'
+                + 'idity is ' + humidity + '%.'
             if (body.current.weather_descriptions[0]) {
                 output_string = 'Right now, it is ' + body.current.weather_descriptions[0]
                     + '. ' + output_string
